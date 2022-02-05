@@ -15,6 +15,8 @@
 		C618362027ADF95300D3D98C /* CustomProgressIndicatorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C618361F27ADF95300D3D98C /* CustomProgressIndicatorsTests.swift */; };
 		C618362A27ADF95300D3D98C /* CustomProgressIndicatorsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C618362927ADF95300D3D98C /* CustomProgressIndicatorsUITests.swift */; };
 		C618362C27ADF95300D3D98C /* CustomProgressIndicatorsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C618362B27ADF95300D3D98C /* CustomProgressIndicatorsUITestsLaunchTests.swift */; };
+		C618363927ADFC7D00D3D98C /* HorizontalProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C618363827ADFC7D00D3D98C /* HorizontalProgressBar.swift */; };
+		C618363B27ADFCA700D3D98C /* CircularProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C618363A27ADFCA700D3D98C /* CircularProgressIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		C618362527ADF95300D3D98C /* CustomProgressIndicatorsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomProgressIndicatorsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C618362927ADF95300D3D98C /* CustomProgressIndicatorsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressIndicatorsUITests.swift; sourceTree = "<group>"; };
 		C618362B27ADF95300D3D98C /* CustomProgressIndicatorsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressIndicatorsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C618363827ADFC7D00D3D98C /* HorizontalProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalProgressBar.swift; sourceTree = "<group>"; };
+		C618363A27ADFCA700D3D98C /* CircularProgressIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,8 @@
 				C618360827ADF95100D3D98C /* AppDelegate.swift */,
 				C618360A27ADF95100D3D98C /* SceneDelegate.swift */,
 				C618360C27ADF95100D3D98C /* MainViewController.swift */,
+				C618363827ADFC7D00D3D98C /* HorizontalProgressBar.swift */,
+				C618363A27ADFCA700D3D98C /* CircularProgressIndicator.swift */,
 				C618361127ADF95300D3D98C /* Assets.xcassets */,
 				C618361327ADF95300D3D98C /* LaunchScreen.storyboard */,
 				C618361627ADF95300D3D98C /* Info.plist */,
@@ -254,8 +260,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C618363B27ADFCA700D3D98C /* CircularProgressIndicator.swift in Sources */,
 				C618360D27ADF95100D3D98C /* MainViewController.swift in Sources */,
 				C618360927ADF95100D3D98C /* AppDelegate.swift in Sources */,
+				C618363927ADFC7D00D3D98C /* HorizontalProgressBar.swift in Sources */,
 				C618360B27ADF95100D3D98C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
