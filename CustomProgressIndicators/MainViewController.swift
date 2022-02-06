@@ -21,6 +21,9 @@ class MainViewController: UIViewController {
         view.addSubview(horizontalProgressBar)
         setupHorizontalProgressBar()
         
+        view.addSubview(circularProgressIndicator)
+        setupCircularProgressIndicator()
+        
         
         self.view = view
     }
@@ -42,7 +45,17 @@ class MainViewController: UIViewController {
     
     
     func setupCircularProgressIndicator() {
+        circularProgressIndicator.backgroundColor = UIColor.clear
+        circularProgressIndicator.translatesAutoresizingMaskIntoConstraints = false
         
+        let circularProgressIndicatorConstraints = [
+            circularProgressIndicator.widthAnchor.constraint(equalToConstant: circularProgressIndicator.baseCircleWidth),
+            circularProgressIndicator.heightAnchor.constraint(equalToConstant: circularProgressIndicator.baseCircleHeight),
+            circularProgressIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            circularProgressIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ]
+        
+        NSLayoutConstraint.activate(circularProgressIndicatorConstraints)
         
     }
     

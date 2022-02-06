@@ -16,5 +16,35 @@ class CircularProgressIndicator: UIView {
         // Drawing code
     }
     */
+    
+    let baseCircleWidth: CGFloat = 300
+    let baseCircleHeight: CGFloat = 300
+    
+    override func draw(_ rect: CGRect) {
+        
+        guard let context = UIGraphicsGetCurrentContext() else {
+            return
+        }
+        
+        context.setFillColor(UIColor.lightGray.cgColor)
+        
+        context.fill(bounds)
+        
+
+        let baseRect = CGRect(x: 0, y: 0, width: baseCircleWidth, height: baseCircleHeight)
+
+        // Draw circle
+        let circleMask = CAShapeLayer()
+        let baseCirclePath = UIBezierPath(ovalIn: baseRect.insetBy(dx: 50, dy: 50))
+
+        circleMask.path = baseCirclePath.cgPath
+        circleMask.lineWidth = 50
+        circleMask.strokeColor = UIColor.black.cgColor
+        circleMask.fillColor = nil
+
+        layer.mask = circleMask
+        
+        context.restoreGState()
+    }
 
 }
