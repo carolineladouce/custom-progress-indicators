@@ -20,6 +20,8 @@ class HorizontalProgressBar: UIView {
     let baseBarWidth: CGFloat = 300
     let baseBarHeight: CGFloat = 50
     let baseColor: UIColor = .lightGray
+    let fillColor: UIColor = .systemPurple
+    var progress: CGFloat = 0.5
     
     override func draw(_ rect: CGRect) {
         
@@ -27,16 +29,22 @@ class HorizontalProgressBar: UIView {
             return
         }
         
-        context.setFillColor(UIColor.clear.cgColor)
+        context.setFillColor(baseColor.cgColor)
         context.fill(bounds)
         
         
         // Draw base rect
-        let progressBarBaseRect = CGRect(x: 0, y: 0, width: baseBarWidth, height: baseBarHeight)
-        let progressBarPath = UIBezierPath(roundedRect: progressBarBaseRect, cornerRadius: progressBarBaseRect.height * 0.25)
-        baseColor.setFill()
-        progressBarPath.fill()
+        let baseRect = CGRect(x: 0, y: 0, width: baseBarWidth, height: baseBarHeight)
+        let barMask = CAShapeLayer()
+        barMask.path = UIBezierPath(roundedRect: baseRect, cornerRadius: baseRect.height * 0.25).cgPath
+        layer.mask = barMask
         
+        let progressFillRect = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: baseBarWidth * progress, height: baseBarHeight))
+        let progressFillLayer = CALayer()
+        progressFillLayer.frame = progressFillRect
+        
+        layer.addSublayer(progressFillLayer)
+        progressFillLayer.backgroundColor = fillColor.cgColor
         
         context.restoreGState()
         
