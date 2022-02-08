@@ -76,22 +76,31 @@ class CircularProgressIndicator: UIView {
     
     
     func createGradientAnimation() {
-        let startPointAnimation = CAKeyframeAnimation(keyPath: "startPoint")
-        startPointAnimation.values = [CGPoint.zero, CGPoint(x: 1, y: 0), CGPoint(x: 1, y: 1)]
+//        let startPointAnimation = CAKeyframeAnimation(keyPath: "startPoint")
+//        startPointAnimation.values = [CGPoint.zero, CGPoint(x: 1, y: 0), CGPoint(x: 1, y: 1)]
+//
+//        startPointAnimation.isRemovedOnCompletion = false
+//        startPointAnimation.repeatCount = Float.infinity
+//        startPointAnimation.duration = 1
+//
+//        let endPointAnimation = CAKeyframeAnimation(keyPath: "endPoint")
+//        endPointAnimation.values = [CGPoint(x: 1, y: 1), CGPoint(x: 0, y: 1), CGPoint.zero]
+//
+//        endPointAnimation.isRemovedOnCompletion = false
+//        endPointAnimation.repeatCount = Float.infinity
+//        endPointAnimation.duration = 1
+//
+//        gradientLayer.add(startPointAnimation, forKey: "startPointAnimation")
+//        gradientLayer.add(endPointAnimation, forKey: "endPointAnimation")
         
-        startPointAnimation.isRemovedOnCompletion = false
-        startPointAnimation.repeatCount = Float.infinity
-        startPointAnimation.duration = 1
-        
-        let endPointAnimation = CAKeyframeAnimation(keyPath: "endPoint")
-        endPointAnimation.values = [CGPoint(x: 1, y: 1), CGPoint(x: 0, y: 1), CGPoint.zero]
-        
-        endPointAnimation.isRemovedOnCompletion = false
-        endPointAnimation.repeatCount = Float.infinity
-        endPointAnimation.duration = 1
-        
-        gradientLayer.add(startPointAnimation, forKey: "startPointAnimation")
-        gradientLayer.add(endPointAnimation, forKey: "endPointAnimation")
+        let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+
+        rotationAnimation.fromValue = CGFloat(Double.pi / 2)
+        rotationAnimation.toValue = CGFloat(2.5 * Double.pi)
+        rotationAnimation.repeatCount = Float.infinity
+        rotationAnimation.duration = 4
+
+        gradientLayer.add(rotationAnimation, forKey: "rotationAnimation")
     }
     
     
