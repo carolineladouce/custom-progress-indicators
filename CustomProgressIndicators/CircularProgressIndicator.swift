@@ -21,6 +21,7 @@ class CircularProgressIndicator: UIView {
     let baseCircleHeight: CGFloat = 300
     let strokeColor: UIColor = .systemPurple
     var progress: CGFloat = 0.5
+    let gradientLayer = CAGradientLayer()
     
     override func draw(_ rect: CGRect) {
         
@@ -46,9 +47,11 @@ class CircularProgressIndicator: UIView {
         
         layer.mask = circleMask
         
+        // Draw progress fill
         let progressFillLayer = CAShapeLayer()
         
         progressFillLayer.path = circleMask.path
+        progressFillLayer.lineCap = .round
         progressFillLayer.strokeStart = 0
         progressFillLayer.strokeEnd = progress
         progressFillLayer.lineWidth = circleMask.lineWidth
@@ -56,9 +59,18 @@ class CircularProgressIndicator: UIView {
         progressFillLayer.strokeColor = strokeColor.cgColor
         
         layer.addSublayer(progressFillLayer)
+        layer.addSublayer(gradientLayer)
+        
+        // Transform (rotate) the progress fill so that the fill starts at 0 degrees
         layer.transform = CATransform3DMakeRotation(CGFloat(90 * Double.pi / 180), 0, 0, -1)
         
+        // Draw gradient
+        gradientLayer.mask = progressFillLayer
+        gradientLayer.locations = [0.4, 0.5, 0.6]
+        gradientLayer.frame = baseRect
+        gradientLayer.colors = [strokeColor.cgColor, UIColor.white.cgColor, strokeColor.cgColor]
         
+    
         context.restoreGState()
     }
     
