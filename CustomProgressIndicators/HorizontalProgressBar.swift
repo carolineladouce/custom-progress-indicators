@@ -46,6 +46,16 @@ class HorizontalProgressBar: UIView {
         layer.addSublayer(progressFillLayer)
         progressFillLayer.backgroundColor = fillColor.cgColor
         
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = baseRect
+        gradientLayer.mask = progressFillLayer
+        gradientLayer.locations = [0.35, 0.5, 0.65]
+        gradientLayer.colors = [fillColor.cgColor, UIColor.white.cgColor, fillColor.cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
+        gradientLayer.endPoint = CGPoint(x: progress, y: 0.5)
+        
+        layer.addSublayer(gradientLayer)
+        
         context.restoreGState()
         
     }
