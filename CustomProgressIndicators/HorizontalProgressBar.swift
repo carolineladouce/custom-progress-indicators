@@ -23,6 +23,9 @@ class HorizontalProgressBar: UIView {
     let fillColor: UIColor = .systemPurple
     var progress: CGFloat = 0.5
     
+    let gradientLayer = CAGradientLayer()
+    
+    
     override func draw(_ rect: CGRect) {
         
         guard let context = UIGraphicsGetCurrentContext() else {
@@ -39,14 +42,15 @@ class HorizontalProgressBar: UIView {
         barMask.path = UIBezierPath(roundedRect: baseRect, cornerRadius: baseRect.height * 0.25).cgPath
         layer.mask = barMask
         
+        // Draw progress fill
         let progressFillRect = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: baseBarWidth * progress, height: baseBarHeight))
+        
         let progressFillLayer = CALayer()
         progressFillLayer.frame = progressFillRect
-        
         layer.addSublayer(progressFillLayer)
         progressFillLayer.backgroundColor = fillColor.cgColor
         
-        let gradientLayer = CAGradientLayer()
+        // Draw gradient
         gradientLayer.frame = baseRect
         gradientLayer.mask = progressFillLayer
         gradientLayer.locations = [0.35, 0.5, 0.65]
@@ -56,9 +60,22 @@ class HorizontalProgressBar: UIView {
         
         layer.addSublayer(gradientLayer)
         
+        
         context.restoreGState()
         
     }
     
+    
+    func createGradientAnimation() {
+           let gradientFlowAnimation = CABasicAnimation(keyPath: "locations")
+           gradientFlowAnimation.fromValue = [-0.3, -0.15, 0]
+           gradientFlowAnimation.toValue = [1, 1.15, 1.3]
+           
+           gradientFlowAnimation.isRemovedOnCompletion = false
+           gradientFlowAnimation.repeatCount = Float.infinity
+           gradientFlowAnimation.duration = 1
+           
+           gradientLayer.add(gradientFlowAnimation, forKey: "flowAnimation")
+       }
     
 }
