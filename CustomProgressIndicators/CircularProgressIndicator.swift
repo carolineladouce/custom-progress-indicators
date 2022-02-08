@@ -56,6 +56,7 @@ class CircularProgressIndicator: UIView {
         progressFillLayer.strokeColor = strokeColor.cgColor
         
         layer.addSublayer(progressFillLayer)
+        layer.transform = CATransform3DMakeRotation(CGFloat(90 * Double.pi / 180), 0, 0, -1)
         
         
         context.restoreGState()
