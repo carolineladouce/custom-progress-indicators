@@ -41,7 +41,7 @@ class MainViewController: UIViewController {
         ]
         
         NSLayoutConstraint.activate(horizontalProgressBarConstraints)
-       
+        
         horizontalProgressBar.createGradientAnimation()
     }
     
@@ -58,7 +58,8 @@ class MainViewController: UIViewController {
         ]
         
         NSLayoutConstraint.activate(circularProgressIndicatorConstraints)
-    
+        
+        circularProgressIndicator.createGradientAnimation()
     }
     
     
