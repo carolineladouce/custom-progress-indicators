@@ -8,25 +8,21 @@
 import UIKit
 
 class HorizontalProgressBar: UIView {
-    
-    /*
-     // Only override draw() if you perform custom drawing.
-     // An empty implementation adversely affects performance during animation.
-     override func draw(_ rect: CGRect) {
-     // Drawing code
-     }
-     */
-    
+
     let baseBarWidth: CGFloat = 300
     let baseBarHeight: CGFloat = 50
     let baseColor: UIColor = .lightGray
     let fillColor: UIColor = .systemPurple
-    var progress: CGFloat = 0.5
+    var progress: CGFloat = 50
     
+    var progressFillLayer = CALayer()
     let gradientLayer = CAGradientLayer()
+    var progressFillWidth: CGFloat = 150
     
     
     override func draw(_ rect: CGRect) {
+        
+//        progressFillWidth = baseBarWidth
         
         guard let context = UIGraphicsGetCurrentContext() else {
             return
@@ -34,8 +30,7 @@ class HorizontalProgressBar: UIView {
         
         context.setFillColor(baseColor.cgColor)
         context.fill(bounds)
-        
-        
+
         // Draw base rect
         let baseRect = CGRect(x: 0, y: 0, width: baseBarWidth, height: baseBarHeight)
         let barMask = CAShapeLayer()
@@ -43,9 +38,9 @@ class HorizontalProgressBar: UIView {
         layer.mask = barMask
         
         // Draw progress fill
-        let progressFillRect = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: baseBarWidth * progress, height: baseBarHeight))
+        let progressFillRect = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: progressFillWidth, height: baseBarHeight))
         
-        let progressFillLayer = CALayer()
+//        let progressFillLayer = CALayer()
         progressFillLayer.frame = progressFillRect
         layer.addSublayer(progressFillLayer)
         progressFillLayer.backgroundColor = fillColor.cgColor
@@ -64,6 +59,33 @@ class HorizontalProgressBar: UIView {
         context.restoreGState()
         
     }
+    
+    
+    func progressChange() {
+//        progressFillWidth = baseBarWidth
+        let animation = CABasicAnimation(keyPath: "progressFillWidth")
+        animation.fromValue = 0
+        animation.toValue = progressFillWidth
+        animation.isRemovedOnCompletion = false
+        animation.repeatCount = Float.infinity
+        animation.duration = 1
+        progressFillLayer.add(animation, forKey: "flowAnimation")
+    }
+    
+    
+//    func progressChange() {
+//        let progressAnimation = CABasicAnimation()
+//        progressAnimation.fromValue = 0
+//        progressAnimation.toValue = progress
+//        progressAnimation.isRemovedOnCompletion = false
+//        progressAnimation.repeatCount = Float.infinity
+//        progressAnimation.duration = 1
+//        
+//        progressFillLayer.add(progressAnimation, forKey: "flowAnimation")
+//        
+//        
+//        
+//    }
     
     
     func createGradientAnimation() {

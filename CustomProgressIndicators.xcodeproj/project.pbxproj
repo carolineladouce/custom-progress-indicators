@@ -17,6 +17,8 @@
 		C618362C27ADF95300D3D98C /* CustomProgressIndicatorsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C618362B27ADF95300D3D98C /* CustomProgressIndicatorsUITestsLaunchTests.swift */; };
 		C618363927ADFC7D00D3D98C /* HorizontalProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C618363827ADFC7D00D3D98C /* HorizontalProgressBar.swift */; };
 		C618363B27ADFCA700D3D98C /* CircularProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C618363A27ADFCA700D3D98C /* CircularProgressIndicator.swift */; };
+		C62DA8C127B9F09F00C733D3 /* HorizontalGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DA8C027B9F09F00C733D3 /* HorizontalGradient.swift */; };
+		C62DA8C327B9F0B600C733D3 /* CircularGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DA8C227B9F0B600C733D3 /* CircularGradient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		C618362B27ADF95300D3D98C /* CustomProgressIndicatorsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressIndicatorsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C618363827ADFC7D00D3D98C /* HorizontalProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalProgressBar.swift; sourceTree = "<group>"; };
 		C618363A27ADFCA700D3D98C /* CircularProgressIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressIndicator.swift; sourceTree = "<group>"; };
+		C62DA8C027B9F09F00C733D3 /* HorizontalGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalGradient.swift; sourceTree = "<group>"; };
+		C62DA8C227B9F0B600C733D3 /* CircularGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularGradient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,8 @@
 				C618360A27ADF95100D3D98C /* SceneDelegate.swift */,
 				C618360C27ADF95100D3D98C /* MainViewController.swift */,
 				C618363827ADFC7D00D3D98C /* HorizontalProgressBar.swift */,
+				C62DA8C027B9F09F00C733D3 /* HorizontalGradient.swift */,
+				C62DA8C227B9F0B600C733D3 /* CircularGradient.swift */,
 				C618363A27ADFCA700D3D98C /* CircularProgressIndicator.swift */,
 				C618361127ADF95300D3D98C /* Assets.xcassets */,
 				C618361327ADF95300D3D98C /* LaunchScreen.storyboard */,
@@ -261,10 +267,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C618363B27ADFCA700D3D98C /* CircularProgressIndicator.swift in Sources */,
+				C62DA8C127B9F09F00C733D3 /* HorizontalGradient.swift in Sources */,
 				C618360D27ADF95100D3D98C /* MainViewController.swift in Sources */,
 				C618360927ADF95100D3D98C /* AppDelegate.swift in Sources */,
 				C618363927ADFC7D00D3D98C /* HorizontalProgressBar.swift in Sources */,
 				C618360B27ADF95100D3D98C /* SceneDelegate.swift in Sources */,
+				C62DA8C327B9F0B600C733D3 /* CircularGradient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -42,6 +42,7 @@ class MainViewController: UIViewController {
         
         NSLayoutConstraint.activate(horizontalProgressBarConstraints)
         
+        horizontalProgressBar.progressChange()
         horizontalProgressBar.createGradientAnimation()
     }
     
@@ -63,7 +64,22 @@ class MainViewController: UIViewController {
     }
     
     
+//    func animateProgress() {
+//        horizontalProgressBar.progressFillLayer.frame.width = horizontalProgressBar.baseBarWidth * horizontalProgressBar.progress
+//    }
+
     
+//    func createGradientAnimation() {
+//           let gradientFlowAnimation = CABasicAnimation(keyPath: "locations")
+//           gradientFlowAnimation.fromValue = [-0.3, -0.15, 0]
+//           gradientFlowAnimation.toValue = [1, 1.15, 1.3]
+//           
+//           gradientFlowAnimation.isRemovedOnCompletion = false
+//           gradientFlowAnimation.repeatCount = Float.infinity
+//           gradientFlowAnimation.duration = 1
+//           
+//           gradientLayer.add(gradientFlowAnimation, forKey: "flowAnimation")
+//       }
     
 }
 

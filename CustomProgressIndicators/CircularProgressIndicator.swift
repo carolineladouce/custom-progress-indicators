@@ -30,9 +30,7 @@ class CircularProgressIndicator: UIView {
         }
         
         context.setFillColor(UIColor.lightGray.cgColor)
-        
         context.fill(bounds)
-        
         
         let baseRect = CGRect(x: 0, y: 0, width: baseCircleWidth, height: baseCircleHeight)
         
@@ -51,7 +49,7 @@ class CircularProgressIndicator: UIView {
         let progressFillLayer = CAShapeLayer()
         
         progressFillLayer.path = circleMask.path
-        progressFillLayer.lineCap = .round
+//        progressFillLayer.lineCap = .round
         progressFillLayer.strokeStart = 0
         progressFillLayer.strokeEnd = progress
         progressFillLayer.lineWidth = circleMask.lineWidth
