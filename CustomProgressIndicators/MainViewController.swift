@@ -9,8 +9,7 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-//    let horizontalProgressBar = HorizontalProgressBar()
-    let horizontalProgressBar = HorizontalGradient()
+    let horizontalProgressBar = HorizontalProgressBar()
     let circularProgressIndicator = CircularProgressIndicator()
     let progressButton = UIButton(type: UIButton.ButtonType.system)
     public var progress: CGFloat = 0
@@ -45,12 +44,9 @@ class MainViewController: UIViewController {
             horizontalProgressBar.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             horizontalProgressBar.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: view.frame.height * -0.25)
         ]
-        
         NSLayoutConstraint.activate(horizontalProgressBarConstraints)
         
         horizontalProgressBar.createAnimation()
-//        horizontalProgressBar.progressChange()
-//        horizontalProgressBar.createGradientAnimation()
     }
     
     
@@ -64,7 +60,6 @@ class MainViewController: UIViewController {
             circularProgressIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             circularProgressIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ]
-        
         NSLayoutConstraint.activate(circularProgressIndicatorConstraints)
         
         circularProgressIndicator.createGradientAnimation()
@@ -73,16 +68,13 @@ class MainViewController: UIViewController {
     
     func setupProgressButton() {
         progressButton.addTarget(self, action: #selector(progressButtonTapped), for: .touchUpInside)
-        
         progressButton.setTitle("+ PROGRESS", for: .normal)
         
         progressButton.translatesAutoresizingMaskIntoConstraints = false
-        
         let progressButtonConstraints = [
             progressButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             progressButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: view.frame.height / 4)
         ]
-        
         NSLayoutConstraint.activate(progressButtonConstraints)
     }
     
@@ -90,10 +82,19 @@ class MainViewController: UIViewController {
     func checkProgress() {
         if progress >= 10 {
             print("PROGRESS IS >= 10 : \(progress)")
-
+            
             self.progress = 0
         } else {
             self.progress += 1
+        }
+    }
+    
+    
+    func refreshProgressButtonTitle() {
+        if progress == 10 {
+            progressButton.setTitle("CLICK TO RESET", for: .normal)
+        } else {
+            progressButton.setTitle("+ PROGRESS", for: .normal)
         }
     }
     
@@ -102,6 +103,7 @@ class MainViewController: UIViewController {
         print("Button Tapped")
         checkProgress()
         horizontalProgressBar.progress = CGFloat(progress)
+        refreshProgressButtonTitle()
     }
     
 }
