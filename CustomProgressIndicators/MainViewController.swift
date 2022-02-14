@@ -87,9 +87,20 @@ class MainViewController: UIViewController {
     }
     
     
+    func checkProgress() {
+        if progress >= 10 {
+            print("PROGRESS IS >= 10 : \(progress)")
+
+            self.progress = 0
+        } else {
+            self.progress += 1
+        }
+    }
+    
+    
     @objc func progressButtonTapped(_ sender: UIButton) {
         print("Button Tapped")
-        progress += 0.1
+        checkProgress()
         horizontalProgressBar.progress = CGFloat(progress)
     }
     

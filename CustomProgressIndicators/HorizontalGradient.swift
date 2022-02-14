@@ -69,7 +69,7 @@ class HorizontalGradient: UIView {
         backgroundMask.path = UIBezierPath(roundedRect: rect, cornerRadius: rect.height * 0.25).cgPath
         layer.mask = backgroundMask
         
-        let progressRect = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: rect.width * progress, height: rect.height))
+        let progressRect = CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: rect.width * (progress / 10), height: rect.height))
         
         progressLayer.frame = progressRect
         progressLayer.backgroundColor = UIColor.systemPink.cgColor
@@ -92,7 +92,7 @@ class HorizontalGradient: UIView {
         
         gradientLayer.frame = rect
         gradientLayer.colors = [gradientColor.cgColor, gradientWhite.cgColor, gradientColor.cgColor]
-        gradientLayer.endPoint = CGPoint(x: progress, y: 0.5)
+        gradientLayer.endPoint = CGPoint(x: progress / 10, y: 0.5)
         
         
         gradientLayer.mask = progressLayer
