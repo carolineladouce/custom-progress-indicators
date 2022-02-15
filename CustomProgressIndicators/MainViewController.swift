@@ -103,6 +103,7 @@ class MainViewController: UIViewController {
         print("Button Tapped")
         checkProgress()
         horizontalProgressBar.progress = CGFloat(progress)
+        circularProgressIndicator.progress = CGFloat(progress)
         refreshProgressButtonTitle()
     }
     
