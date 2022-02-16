@@ -1,6 +1,6 @@
 # Custom Progress Indicators
 
-This is my implementation of the [Custom Progress Bars](https://medium.com/@marina.sauca/custom-progress-bars-dc1c1c111751) tutorial by Marina Sauca (thanks Marina!).  
+This is my implementation of the [Custom Animated Progress Bars](https://medium.com/@marina.sauca/custom-progress-bars-dc1c1c111751) tutorial by Marina Sauca (thanks Marina!).  
 This project uses Swift.
 
 ## My Changes
