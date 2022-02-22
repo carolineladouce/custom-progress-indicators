@@ -1,11 +1,11 @@
 # Custom Progress Indicators
 
 This is my implementation of the [Custom Animated Progress Bars](https://medium.com/@marina.sauca/custom-progress-bars-dc1c1c111751) tutorial by Marina Sauca (thanks Marina!).  
-This project uses Swift.
+This project uses Swift, UIKit, Core Animation, and Core Graphics.
 
 ## My Changes
 
-In this exercise, I decided to build the project using UIKit instead of Storyboards.
+I decided to build the project programmatically instead of using Storyboards.
 Additionally, I added a button for users to increment and reset the progress indicators.
 
 ## What I learned 
